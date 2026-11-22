@@ -1,0 +1,15 @@
+# Private configuration and credentials
+**/config_settings.h
+**/iot_secrets.h
+**/secrets.h
+
+# Arduino build outputs
+build/
+*.bin
+*.elf
+*.map
+
+# Editor and system files
+.vscode/
+.DS_Store
+Thumbs.db
