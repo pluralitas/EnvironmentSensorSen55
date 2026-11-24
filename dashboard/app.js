@@ -294,7 +294,11 @@ function render() {
   );
 
   const traces = selected.map((metric, index) => ({
-    x: state.rows.map(row => row.time),
+    x: state.rows.map(row =>
+      new Date(Date.parse(row.time) + 8 * 3600000)
+      .toISOString()
+      .slice(0, 19)
+    ),
 
     y: state.rows.map(
       row => row.values[metric[0]] ?? null
@@ -329,7 +333,7 @@ function render() {
 
     xaxis: {
       type: 'date',
-      title: 'Time (UTC)'
+      title: 'Time (SGT, UTC+8)'
     },
 
     yaxis: {
